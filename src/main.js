@@ -10,6 +10,8 @@ import Avatar from 'primevue/avatar'
 import InputText from 'primevue/inputtext'
 import IconField from 'primevue/iconfield';
 import InputIcon from 'primevue/inputicon';
+import { Toolbar } from 'primevue'
+import Image from 'primevue/image'
 
 // Estilos de PrimeVue
 import 'primeicons/primeicons.css'  // Iconos
@@ -28,4 +30,6 @@ createApp(App)
     .component('pv-InputText', InputText)
     .component('pv-IconField', IconField)
     .component('pv-InputIcon', InputIcon)
+    .component('pv-Toolbar', Toolbar)
+    .component('pv-Image', Image)
     .mount('#app')
