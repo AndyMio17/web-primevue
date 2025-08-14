@@ -3,7 +3,7 @@
 </script>
 
 <template class="firsttemplate">
-  <div class="menu">
+  <!-- <div class="menu">
 
     <pv-Toolbar :model="items" class="tool">
 
@@ -40,11 +40,134 @@
 
     </pv-Toolbar>
 
-  </div>
+  </div> -->
   
+  <header class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="#"><pv-Image src="img/logo.jpg" alt="Image" width="250"/></a>
+    </div>
+
+    <!-- Menú desktop -->
+    <nav class="menu desktop" v-if="!isMobile">
+      <ul>
+        <li><a href="#">Modelos</a></li>
+        <li><a href="#">Precios</a></li>
+        <li><a href="#">Recursos</a></li>
+      </ul>
+    </nav>
+
+    <!-- Botones a la derecha en desktop -->
+    <div class="actions desktop" v-if="!isMobile">
+      <a href="#" class="btn-create">Crear documento</a>
+      <a href="#" class="link">Iniciar sesión</a>
+    </div>
+
+    <!-- Botón hamburguesa en móvil -->
+    <button class="hamburger mobile" v-if="isMobile" @click="toggleMobileMenu">
+      ☰
+    </button>
+
+    <!-- Menú móvil desplegable -->
+    <div class="mobile-menu mobile" v-if="isMobile && mobileMenuOpen">
+      <a href="#">Modelos</a>
+      <a href="#">Precios</a>
+      <a href="#">Recursos</a>
+      <a href="#">Crear documento</a>
+      <a href="#">Iniciar sesión</a>
+    </div>
+  </header>
 
 
 
+  <div class="page-container">
+    <!-- Encabezado -->
+    <section class="header-section">
+      <h1>Contrato de Arrendamiento de Vivienda Habitual</h1>
+      <p>
+        Modelo de contrato para formalizar el alquiler de una vivienda como residencia habitual.
+        Personalízalo fácilmente y descárgalo en Word o PDF.
+      </p>
+      <button class="btn-primary">Crear documento</button>
+    </section>
+
+    <!-- Contenido -->
+    <section class="content-section">
+      <!-- Columna izquierda -->
+      <div class="main-content">
+        <h2>¿Qué es este contrato?</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipiscing elit varius, quisque sociis aliquam a integer consequat fames odio, nisl nunc justo sapien mauris nullam nisi. Velit proin nulla interdum nam rhoncus, semper sagittis sollicitudin sem eleifend litora, dui magnis justo eu. Dui faucibus nec facilisi purus aptent aenean class tempor placerat, fames arcu nostra luctus vulputate sapien dignissim.
+
+Purus congue commodo diam ut condimentum, aptent nisi curae quis sapien malesuada, platea non posuere sodales. Ultricies est vitae diam cras posuere dapibus volutpat etiam netus nunc vestibulum, augue duis proin consequat arcu tellus condimentum per aptent porta urna, potenti dis faucibus vivamus sollicitudin nascetur mattis sem quis penatibus. Rutrum risus nisl lobortis nostra bibendum dictum, suspendisse etiam donec nec mus, accumsan convallis tortor enim ridiculus.
+        </p>
+
+        <h2>¿Cuándo usarlo?</h2>
+        <ul>
+          <li>Cuando alquilas una vivienda para vivir.</li>
+          <li>Si quieres establecer las condiciones por escrito.</li>
+          <li>Para cumplir con la Ley de Arrendamientos Urbanos.</li>
+        </ul>
+
+        <h2>Información legal</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipiscing elit varius, quisque sociis aliquam a integer consequat fames odio, nisl nunc justo sapien mauris nullam nisi. Velit proin nulla interdum nam rhoncus, semper sagittis sollicitudin sem eleifend litora, dui magnis justo eu. Dui faucibus nec facilisi purus aptent aenean class tempor placerat, fames arcu nostra luctus vulputate sapien dignissim.
+
+Purus congue commodo diam ut condimentum, aptent nisi curae quis sapien malesuada, platea non posuere sodales. Ultricies est vitae diam cras posuere dapibus volutpat etiam netus nunc vestibulum, augue duis proin consequat arcu tellus condimentum per aptent porta urna, potenti dis faucibus vivamus sollicitudin nascetur mattis sem quis penatibus. Rutrum risus nisl lobortis nostra bibendum dictum, suspendisse etiam donec nec mus, accumsan convallis tortor enim ridiculus.
+        </p>
+
+        <!-- Preguntas frecuentes -->
+        <h2>Preguntas frecuentes</h2>
+        <details>
+          <summary>¿Es obligatorio registrar este contrato?</summary>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit varius, quisque sociis aliquam a integer consequat fames odio, nisl nunc justo sapien mauris nullam nisi. Velit proin nulla interdum nam rhoncus, semper sagittis sollicitudin sem eleifend litora, dui magnis justo eu. Dui faucibus nec facilisi purus aptent aenean class tempor placerat, fames arcu nostra luctus vulputate sapien dignissim.
+
+Purus congue commodo diam ut condimentum, aptent nisi curae quis sapien malesuada, platea non posuere sodales. Ultricies est vitae diam cras posuere dapibus volutpat etiam netus nunc vestibulum, augue duis proin consequat arcu tellus condimentum per aptent porta urna, potenti dis faucibus vivamus sollicitudin nascetur mattis sem quis penatibus. Rutrum risus nisl lobortis nostra bibendum dictum, suspendisse etiam donec nec mus, accumsan convallis tortor enim ridiculus.</p>
+        </details>
+        <details>
+          <summary>¿Cuál es la duración mínima?</summary>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit varius, quisque sociis aliquam a integer consequat fames odio, nisl nunc justo sapien mauris nullam nisi. Velit proin nulla interdum nam rhoncus, semper sagittis sollicitudin sem eleifend litora, dui magnis justo eu. Dui faucibus nec facilisi purus aptent aenean class tempor placerat, fames arcu nostra luctus vulputate sapien dignissim.
+
+Purus congue commodo diam ut condimentum, aptent nisi curae quis sapien malesuada, platea non posuere sodales. Ultricies est vitae diam cras posuere dapibus volutpat etiam netus nunc vestibulum, augue duis proin consequat arcu tellus condimentum per aptent porta urna, potenti dis faucibus vivamus sollicitudin nascetur mattis sem quis penatibus. Rutrum risus nisl lobortis nostra bibendum dictum, suspendisse etiam donec nec mus, accumsan convallis tortor enim ridiculus.</p>
+        </details>
+      </div>
+
+      <!-- Columna derecha -->
+      <aside class="sidebar">
+        <div class="info-box">
+          <h3>Formato</h3>
+          <p>Word y PDF</p>
+        </div>
+        <div class="info-box">
+          <h3>Tamaño</h3>
+          <p>4 páginas</p>
+        </div>
+        <div class="info-box">
+          <h3>Última actualización</h3>
+          <p>Agosto 2025</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section class="steps-section">
+      <h2>Cómo funciona</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-number">1</span>
+          <p>Responde a unas preguntas simples para personalizar el documento.</p>
+        </div>
+        <div class="step">
+          <span class="step-number">2</span>
+          <p>Descarga el documento en Word o PDF.</p>
+        </div>
+        <div class="step">
+          <span class="step-number">3</span>
+          <p>Fírmenlo ambas partes y guarden una copia.</p>
+        </div>
+      </div>
+    </section>
+  </div>
 
 
   <div>
@@ -54,41 +177,6 @@
 </template>
 
 <style scoped>
-  .p-button {
-    background-color: #ff9800 ;
-    border-color: #ff9800;
-  }
-  
-  .text{
-    background-color: #ff9800 ;
-    border-color: #ff9800;
-  }
 
-  .flex{
-    display: flex; /* Usar para alinear los elementos*/
-    gap: 10px; /* Espacio entre los elementos */
-  }
 
-  .firsttemplate{
-    /*margin: 20px;*/
-    background-color: red;
-  }
-
-  .emenu{
-    display: flex;
-    gap: 10px;
-  }
-
-  .buttonmenu{
-    background-color: #ff9800 !important;
-
-  }
-
-  li{
-    list-style-type: none;
-    display: inline;
-    margin-inline: 10px;
-
-  }
-  
 </style>

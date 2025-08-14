@@ -12,11 +12,11 @@ import IconField from 'primevue/iconfield';
 import InputIcon from 'primevue/inputicon';
 import { Toolbar } from 'primevue'
 import Image from 'primevue/image'
-
+import Menu from 'primevue/menu'
 // Estilos de PrimeVue
 import 'primeicons/primeicons.css'  // Iconos
 import Aura from '@primeuix/themes/aura' // Tema Aura oficial de PrimeVue
-
+import '/src/estilo.css'
 
 createApp(App)
     .use(PrimeVue,{
@@ -32,4 +32,5 @@ createApp(App)
     .component('pv-InputIcon', InputIcon)
     .component('pv-Toolbar', Toolbar)
     .component('pv-Image', Image)
+    .component('pv-Menu', Menu)
     .mount('#app')
